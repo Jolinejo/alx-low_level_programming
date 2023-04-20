@@ -9,7 +9,7 @@
 int main(void)
 {
 	char *cmd =
-	"echo \"and that piece of art is useful\" - Dora Korpar, 2015-10-19";
+	"echo 'and that piece of art is useful\" - Dora Korpar, 2015-10-19'";
 
 	FILE *fp = popen(cmd, "w");
 
