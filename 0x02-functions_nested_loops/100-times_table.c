@@ -8,21 +8,21 @@
  */
 void print_times_table(int n)
 {
-	int i = 0;
-	int j = 0;
+	int i = 0, j = 0, x;
 
 	if (n <= 15 && n >= 0)
 		while (i <= n)
 		{
 			while (j <= n)
 			{
-				int x = i * j;
-
+				x = i * j;
 				if (j == 0 && n != 0)
 				{
 					_putchar(x + '0');
 					_putchar(',');
 				}
+				else if (n == 0)
+					_putchar('0');
 				else
 				{
 					int dig1 = (x / 10) % 10;
