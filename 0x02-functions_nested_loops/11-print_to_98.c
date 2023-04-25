@@ -13,6 +13,8 @@ void print_to_98(int n)
 	if (n <= 98)
 		for (; n <= 98; n++)
 		{
+			if (n == 0)
+				_putchar('0');
 			if (n < 0)
 			{
 				_putchar('-');
@@ -31,7 +33,6 @@ void print_to_98(int n)
 			}
 		}
 	else
-	{
 		for (; n >= 98; n--)
 		{
 			x = n * 1;
@@ -45,6 +46,5 @@ void print_to_98(int n)
 				_putchar(' ');
 			}
 		}
-	}
 	_putchar('\n');
 }
