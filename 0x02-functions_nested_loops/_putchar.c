@@ -11,20 +11,3 @@ int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
-
-/**
- * print_alphabet - writes the alphabets
- *
- * Return: On success 0.
- */
-void print_alphabet(void)
-{
-	char alpha = 'a';
-
-	while (alpha <= 'z')
-	{
-		_putchar(alpha);
-		alpha++;
-	}
-	_putchar('\n');
-}
