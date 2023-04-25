@@ -12,7 +12,7 @@ int main(void)
 
 	for (i = 0; i * 3 < 1024; i++)
 	{
-		if ((i * 3) % 5 )
+		if ((i * 3) % 5)
 			sum += i * 3;
 	}
 	for (i = 0; i * 5 < 1024; i++)
