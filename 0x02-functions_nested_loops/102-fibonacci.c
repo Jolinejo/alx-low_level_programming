@@ -7,17 +7,17 @@
  */
 int main(void)
 {
-	long int fib[50];
+	long int fib[52];
 	int i;
 
 	fib[0] = 0;
 	fib[1] = 1;
-	for (i = 2; i < 49; i++)
+	for (i = 2; i < 41; i++)
 	{
 		fib[i] = fib[i - 1] + fib[i - 2];
 		printf("%ld, ", fib[i]);
 	}
-	fib[49] = fib[48] + fib[47];
-	printf("%ld\n", fib[49]);
+	fib[51] = fib[50] + fib[49];
+	printf("%ld\n", fib[51]);
 	return (0);
 }
