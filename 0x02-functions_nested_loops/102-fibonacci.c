@@ -12,7 +12,7 @@ int main(void)
 
 	fib[0] = 0;
 	fib[1] = 1;
-	for (i = 2; i < 41; i++)
+	for (i = 2; i < 51; i++)
 	{
 		fib[i] = fib[i - 1] + fib[i - 2];
 		printf("%ld, ", fib[i]);
