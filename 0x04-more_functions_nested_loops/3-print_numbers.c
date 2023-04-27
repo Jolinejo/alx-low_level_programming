@@ -15,5 +15,4 @@ void print_numbers(void)
 		alpha++;
 	}
 	_putchar('\n');
-	return (0);
 }
