@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * main - Entry point
+ * print_numbers - Entry point
  * Description: "print alphabet"
  * Return: Always 0 (Success)
  */
-void main(void)
+void print_numbers(void)
 {
 	int alpha = 0;
 
