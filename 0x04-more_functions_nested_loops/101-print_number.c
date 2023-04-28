@@ -7,7 +7,7 @@
  */
 void print_number(int n)
 {
-	int len = 10;
+	int len = 1;
 	unsigned int z;
 	unsigned int final;
 
@@ -19,12 +19,12 @@ void print_number(int n)
 	else
 		z = n;
 	final = z;
-	while (z / 10)
+	while (z /= 10)
 	{
 		len *= 10;
 	}
 	for ( ; len; len /= 10)
 	{
-		_putchar((final % 10) + '0');
+		_putchar(((final / len) % 10) + '0');
 	}
 }
