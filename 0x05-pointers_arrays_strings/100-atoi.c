@@ -8,7 +8,7 @@
  */
 int _atoi(char *s)
 {
-	int i = 0;
+	unsigned int i = 0;
 	int j;
 	int odd = 0;
 
@@ -25,5 +25,5 @@ int _atoi(char *s)
 	}
 	if (odd % 2)
 		i = i * -1;
-	return (i);
+	return (int(i));
 }
