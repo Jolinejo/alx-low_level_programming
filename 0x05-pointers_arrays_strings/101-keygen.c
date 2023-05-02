@@ -33,5 +33,6 @@ int main(void)
 	}
 	for (i = 0; i < 33; i++)
 		putchar(out[i]);
+	return (0);
 
 }
