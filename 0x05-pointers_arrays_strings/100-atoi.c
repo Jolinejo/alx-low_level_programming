@@ -25,5 +25,5 @@ int _atoi(char *s)
 	}
 	if (odd % 2)
 		i = i * -1;
-	return (int(i));
+	return (i);
 }
