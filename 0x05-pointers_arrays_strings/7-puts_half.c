@@ -3,6 +3,7 @@
 /**
  * puts_half - Entry point
  * Description: to check if letter is uppercase
+ * @str: string`
  * Return: no return
  */
 void puts_half(char *str)
