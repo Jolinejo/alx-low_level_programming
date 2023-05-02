@@ -1,4 +1,4 @@
-#include main.h
+#include "main.h"
 
 /**
  * puts2 - Entry point
@@ -11,9 +11,9 @@ void puts2(char *str)
 	int i;
 	int len = 0;
 
-	for (i = 0; s[i]; i++)
+	for (i = 0; str[i]; i++)
 		len++;
 	for (i = 0; i < len; i += 2)
-		_putchar(s[i]);
+		_putchar(str[i]);
 	_putchar('\n');
 }
