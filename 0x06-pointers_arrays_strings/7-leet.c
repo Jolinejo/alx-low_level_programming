@@ -14,16 +14,12 @@ char *leet(char *str)
 
 	for (i = 0; str[i]; i++)
 	{
-		int found = 0;
-
 		for (j = 0; letters[j]; j++)
 			if (str[i] == letters[j])
 			{
-				found = 1;
+				str[i] = numbers[j];
 				break;
 			}
-		if (found)
-			str[i] = numbers[j];
 	}
 	return (str);
 }
