@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * _stepbrk - Entry point
+ * _strpbrk - Entry point
  * Description: to check if letter is uppercase
  * @s: string
  * @accept: character
@@ -12,16 +12,18 @@ char *_strpbrk(char *s, char *accept)
 {
 	int i;
 	int j;
+	char *ptr = NULL;
 
-	if (accept == 0 || s == 0)
-		return (NULL);
+	if (accept == NULL || s == NULL)
+		return (ptr);
 	for (i = 0; s[i]; i++)
 	{
 		for (j = 0; accept[j]; j++)
 			if (s[i] == accept[j])
 			{
+				ptr = &s[i];
 				return (s + i);
 			}
 	}
-	return (NULL);
+	return (ptr);
 }
