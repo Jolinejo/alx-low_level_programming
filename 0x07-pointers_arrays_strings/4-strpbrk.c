@@ -10,8 +10,8 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	unsigned int i;
-	unsigned int j;
+	int i;
+	int j;
 
 	if (accept == 0 || s == 0)
 		return (NULL);
