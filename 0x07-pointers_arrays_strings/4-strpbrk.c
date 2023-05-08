@@ -12,14 +12,8 @@ char *_strpbrk(char *s, char *accept)
 	unsigned int i;
 	unsigned int j;
 
-	if (!accept[0])
-	{
-		i = 0;
-		while (s[i])
-			i++;
-		return (s + i);
-
-	}
+	if (accept == 0 || s == 0)
+		return (0);
 	for (i = 0; s[i]; i++)
 	{
 		for (j = 0; accept[j]; j++)
