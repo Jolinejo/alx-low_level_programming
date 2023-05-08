@@ -7,15 +7,22 @@
  * @accept: character
  * Return: int
  */
-char *_strspn(char *s, char *accept)
+unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int i;
+	unsigned int j;
 	unsigned int len = 0;
 
 	for (i = 0; s[i]; i++)
-		if (s[i] == accept[i])
-			len++;
-		else
+	{
+		for (j = 0; accept[j]; j++)
+			if (s[i] == accept[j])
+			{
+				len++;
+				break;
+			}
+		if (!accept[j])
 			break;
+	}
 	return (len);
 }
