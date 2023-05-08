@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
  * print_diagsums- Entry point
  * Description: to check if letter is uppercase
