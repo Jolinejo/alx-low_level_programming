@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * square_root - Entry point
  * Description: to check if letter is uppercase
