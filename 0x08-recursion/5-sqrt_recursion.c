@@ -7,7 +7,7 @@
  * @m: sqrt
  * Return: int
  */
-int square_root(int n, int m)
+int square_root(int n, int m = 0)
 {
 	if (m * m == n)
 		return (m);
