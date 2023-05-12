@@ -11,7 +11,7 @@ int square_root(int n, int m)
 {
 	if (m * m == n)
 		return (m);
-	if (m <= n / 2)
+	if (m == n / 2)
 		return (-1);
 	return (square_root(n, m + 1));
 }
@@ -25,5 +25,7 @@ int _sqrt_recursion(int n)
 {
 	if (n == 1 || n == 0)
 		return (n);
+	if (n < 0)
+		return (-1);
 	return (square_root(n, 0));
 }	
