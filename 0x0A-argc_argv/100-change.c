@@ -25,11 +25,13 @@ int main(int argc, char *argv[])
 		return (0);
 	}
 	i = atoi(argv[1]);
-	for (l = 0; l < 5 && i != 0; l++)
+	for (l = 0; l < 5 && i >= 2; l++)
 	{
 		sum += i / coins[l];
 		i = i % coins[l];
 	}
+	if (i == 1)
+		sum += 1;
 	printf("%d\n", sum);
 	return (0);
 }
