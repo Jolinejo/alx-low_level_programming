@@ -15,15 +15,15 @@ int main(int argc, char *argv[])
 
 	for (i = 1; i < argc; i++)
 	{
-		l = strlen(argv[i]);
-		if (atoi(argv[i]) == 0 && (argv[i] - '0' != 0 || l > 1))
+		for (l = 0; argv[i][l]; l++)
 		{
+			if (argv[i][l] >= '0' && argv[i][l] <= '9')
+				continue;
 			printf("Error\n");
 			return (1);
 		}
 		sum += atoi(argv[i]);
 	}
-	if (sum >= 0)
-		printf("%d\n", sum);
+	printf("%d\n", sum);
 	return (0);
 }
