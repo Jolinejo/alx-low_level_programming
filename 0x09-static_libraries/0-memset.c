@@ -1,5 +1,3 @@
-#include "main.h"
-
 /**
  * _memset - Entry point
  * Description: to check if letter is uppercase

@@ -1,5 +1,3 @@
-#include "main.h"
-
 /**
  * _strcpy - Entry point
  * @src: source striing

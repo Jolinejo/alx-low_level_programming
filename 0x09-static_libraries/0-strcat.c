@@ -1,5 +1,3 @@
-#include "main.h"
-
 /**
  * _strcat - Entry point
  * Description: to concat two strings

@@ -1,16 +1,20 @@
 #include "main.h"
-
 /**
- * _puts - Entry point
- * Description: to check if letter is uppercase
- * @str: string to print
- * Return: no return
+ * _puts - prints a string
+ * @str : char pointer
+ *
+ * _puts: prints a string followed by a new line
+ *
  */
 void _puts(char *str)
 {
-	int i;
+	int a;
 
-	for (i = 0; str[i]; i++)
-		_putchar(str[i]);
+	a = 0;
+	while (str[a] != '\0')
+	{
+		_putchar(str[a]);
+		a++;
+	}
 	_putchar('\n');
 }

@@ -1,4 +1,3 @@
-#include "main.h"
 /**
  * _abs - Entry point
  * @n: num to get abs of

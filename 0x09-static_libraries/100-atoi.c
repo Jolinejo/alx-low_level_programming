@@ -1,5 +1,3 @@
-#include "main.h"
-
 /**
  * _atoi - Entry point
  * Description: to check if letter is uppercase

@@ -1,5 +1,3 @@
-#include "main.h"
-
 /**
  * _memcpy - Entry point
  * Description: to concat two strings

@@ -1,4 +1,3 @@
-#include "main.h"
 /**
  * _isdigit - Entry point
  * @c: num to check

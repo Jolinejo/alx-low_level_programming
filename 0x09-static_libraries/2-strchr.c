@@ -1,17 +1,18 @@
-#include "main.h"
-
 /**
- * _strlen - Entry point
+ * _strchr - Entry point
  * Description: to check if letter is uppercase
- * @s: string to count its length
- * Return: no return
+ * @s: string
+ * @c: character
+ * Return: int
  */
-int _strlen(char *s)
+char *_strchr(char *s, char c)
 {
-	int i;
-	int len = 0;
+	unsigned int i;
 
 	for (i = 0; s[i]; i++)
-		len++;
-	return (len);
+		if (s[i] == c)
+			return (s + i);
+	if (c == 0)
+		return (s + i);
+	return (0);
 }

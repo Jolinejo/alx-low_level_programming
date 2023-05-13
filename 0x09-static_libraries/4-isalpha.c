@@ -1,5 +1,3 @@
-#include "main.h"
-
 /**
  * _isalpha - Entry point
  * @c: character to check
