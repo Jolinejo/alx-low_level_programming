@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 	for (l = 0; l < 5 && i != 0; l++)
 	{
 		sum += i / coins[l];
-		i = i % coins[1];
+		i = i % coins[l];
 	}
 	printf("%d\n", sum);
 	return (0);
