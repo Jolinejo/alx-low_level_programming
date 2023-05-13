@@ -23,7 +23,8 @@ int main(int argc, char *argv[])
 		}
 		if (atoi(argv[i]) < 0)
 		{
-			continue;
+			printf("0\n");
+			return (0);
 		}
 		sum += atoi(argv[i]);
 	}
