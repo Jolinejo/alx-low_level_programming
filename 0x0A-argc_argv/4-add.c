@@ -21,13 +21,11 @@ int main(int argc, char *argv[])
 			printf("Error\n");
 			return (1);
 		}
-		if (atoi(argv[i]) < 0)
-		{
-			printf("0\n");
-			return (0);
-		}
 		sum += atoi(argv[i]);
 	}
-	printf("%d\n", sum);
+	if (sum >= 0)
+		printf("%d\n", sum);
+	else
+		printf("0\n");
 	return (0);
 }
