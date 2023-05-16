@@ -11,11 +11,15 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	unsigned int i, l = 0, l2 = 0;
+	unsigned int i, j, l = 0, l2 = 0;
 	char *str;
+	char nu = "";
 
 	if (s1 == NULL && s2 == NULL)
-		return (NULL);
+	{
+		str = &nu;
+		return (str);
+	}
 	for (i = 0; s1[i]; i++)
 		l++;
 	for (i = 0; s2[i]; i++)
@@ -26,8 +30,8 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 	for (i = 0; s1[i]; i++)
 		str[i] = s1[i];
-	for (i = 0; s2[i]; i++)
-		str[i] = s2[i];
-	str[i] = s2[i];
-	return (str);	
+	for (j = 0; s2[j]; i++, j++)
+		str[i] = s2[j];
+	str[i] = s2[j];
+	return (str);
 }
