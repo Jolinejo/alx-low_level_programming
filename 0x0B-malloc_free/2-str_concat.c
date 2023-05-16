@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * _ str_concat - Entry point
+ * str_concat - Entry point
  * Description: to check if letter is uppercase
  * @s1: string1
  * @s2: string2
@@ -11,9 +11,9 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	unsigned i, l, l2 = 0;
+	unsigned int i, l = 0, l2 = 0;
 	char *str;
-	
+
 	if (s1 == NULL && s2 == NULL)
 		return (NULL);
 	for (i = 0; s1[i]; i++)
@@ -29,6 +29,5 @@ char *str_concat(char *s1, char *s2)
 	for (i = 0; s2[i]; i++)
 		str[i] = s2[i];
 	str[i] = s2[i];
-	return (str);
-	
+	return (str);	
 }
