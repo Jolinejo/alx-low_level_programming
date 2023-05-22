@@ -2,35 +2,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * _strlen - Entry point
+ * _strdup - Entry point
  * Description: to check if letter is uppercase
- * @s: string to count its length
- * Return: no return
+ * @str: string
+ * Return: int
  */
-int _strlen(char *s)
+char *_strdup(char *str)
 {
-	int i;
-	int len = 0;
+	unsigned int i;
+	char *ar;
+	unsigned int l = 0;
 
-	for (i = 0; s[i]; i++)
-		len++;
-	return (len);
-}
-/**
- * _strcpy - Entry point
- * @src: source striing
- * @dest: dest string
- * Description: to check if letter is uppercase
- * Return: no return
- */
-char *_strcpy(char *dest, char *src)
-{
-	int i;
-
-	for (i = 0; src[i]; i++)
-		dest[i] = src[i];
-	dest[i] = src[i];
-	return (dest);
+	if (str == NULL)
+		return (NULL);
+	for (i = 0; str[i]; i++)
+		l++;
+	l++;
+	ar = malloc(sizeof(char) * l);
+	if (ar == NULL)
+		return (NULL);
+	for (i = 0; str[i]; i++)
+		ar[i] = str[i];
+	ar[i] = str[i];
+	return (ar);
 }
 /**
  * new_dog- Entry point
@@ -46,21 +40,15 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (new == NULL || name == NULL || owner == NULL)
 		return (NULL);
-	new->name = malloc(sizeof(char) * (_strlen(name) + 1));
-	if (new->name)
-	{
-		new->name = _strcpy(new->name, name);
-	}
-	else
+	new->name = _strdup(name);
+	if (new->name == NULL)
 	{
 		free(new);
 		return (NULL);
 	}
 	new->age = age;
-	new->owner = malloc(sizeof(char) * (_strlen(name) + 1));
-	if (owner)
-		new->owner = _strcpy(new->owner, owner);
-	else
+	new->owner = _strdup(owner);
+	if (new->owner == NULL)
 	{
 		free(new->name);
 		free(new);
