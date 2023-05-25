@@ -1,5 +1,6 @@
 #include "variadic_functions.h"
 #include <stdio.h>
+#include <string.h>
 /**
  * print_all - Entry point
  * Description: to check if letter is uppercase
@@ -34,13 +35,12 @@ void print_all(const char *format, ...)
 		case 's':
 			j = 1;
 			s = va_arg(args, char*);
-			if (s)
-				printf("%s", s);
-			while (!s)
+			if ((!s) || (strcmp(s, "NULL") == 0))
 			{
-				printf("(nil)");
+				printf("%s", s);
 				break;
 			}
+			printf("(nil)");
 			break;
 		default:
 			j = 0;
