@@ -37,10 +37,10 @@ void print_all(const char *format, ...)
 			s = va_arg(args, char*);
 			if ((!s) || (strcmp(s, "NULL") == 0))
 			{
-				printf("%s", s);
+				printf("(nil)");
 				break;
 			}
-			printf("(nil)");
+			printf("%s", s);
 			break;
 		default:
 			j = 0;
