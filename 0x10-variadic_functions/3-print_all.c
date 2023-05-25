@@ -48,5 +48,5 @@ void print_all(const char *format, ...)
 		i++;
 	}
 	printf("\n");
-	va_end(arg);
+	va_end(args);
 }
