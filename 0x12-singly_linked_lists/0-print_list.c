@@ -1,3 +1,4 @@
+#include "lists.h"
 /**
  * print_list - Entry point
  * Description: to check if letter is uppercase
