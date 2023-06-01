@@ -38,10 +38,10 @@ list_t *add_node_end(list_t **head, const char *str)
 	new->str = s;
 	l = _strlen(s);
 	new->len = l;
-	while (*head->next)
-		*head = *head->next;
+	while ((*head)->next)
+		*head = (*head)->next;
 	new->next = NULL;
-	*head->next == new;
+	(*head)->next = new;
 	return (new);
 
 }
