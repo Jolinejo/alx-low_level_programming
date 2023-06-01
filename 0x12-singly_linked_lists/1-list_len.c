@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * list_list - Entry point
+ * list_len - Entry point
  * Description: to check if letter is uppercase
  * @h: head
  * Return: int
