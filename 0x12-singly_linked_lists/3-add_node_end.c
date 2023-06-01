@@ -39,10 +39,17 @@ list_t *add_node_end(list_t **head, const char *str)
 	new->str = s;
 	l = _strlen(s);
 	new->len = l;
-	while (temp->next)
-		temp = temp->next;
 	new->next = NULL;
-	temp->next = new;
+	if (temp == NULL)
+	{
+		*head = new;
+	}
+	else
+	{
+		while (temp->next)
+			temp = temp->next;
+		temp->next = new;
+	}
 	return (new);
 
 }
