@@ -3,7 +3,7 @@
  * add_nodeint - Entry point
  * Description: to check if letter is uppercase
  * @head: head
- * @str: string
+ * @n: string
  * Return: int
  */
 listint_t *add_nodeint(listint_t **head, const int n)
