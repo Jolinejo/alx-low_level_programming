@@ -21,15 +21,15 @@ int main(int argc, char *argv[])
 	}
 	file_content = malloc(buff);
 	open_file = open(argv[1], O_RDONLY);
+	read_status = read(open_file, file_content, buff);
+	open_file2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	do {
-		read_status = read(open_file, file_content, buff);
 		if (read_status == -1 || open_file == -1)
 		{
 			free(file_content);
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			exit(98);
 		}
-		open_file2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 		write_status = write(open_file2, file_content, read_status);
 		if (write_status == -1 || open_file2 == -1)
 		{
@@ -37,6 +37,8 @@ int main(int argc, char *argv[])
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
+		read_status = read(open_file, file_content, buff);
+		open_file2 = open(argv[2], O_WRONLY | O_APPEND);
 	} while (read_status > 0);
 	close_status = close(open_file);
 	close_status2 = close(open_file2);
