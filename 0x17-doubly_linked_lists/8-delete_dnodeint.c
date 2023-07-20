@@ -1,5 +1,24 @@
 #include "lists.h"
 /**
+ * dlistint_lenn - Entry point
+ * Description: print
+ * @h: head
+ * Return: int
+ */
+unsigned int dlistint_lenn(const dlistint_t *h)
+{
+	unsigned int i = 0;
+
+	if (h == NULL)
+		return (0);
+	while (h != NULL)
+	{
+		i++;
+		h = h->next;
+	}
+	return (i);
+}
+/**
  * delete_dnodeint_at_index- Entry point
  * Description: to check if letter is uppercase
  * @head: head
@@ -11,6 +30,8 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	dlistint_t *temp;
 	dlistint_t *del;
 
+	if (index >= dlistint_lenn(*head))
+		return (-1);
 	if (index == 0)
 	{
 		temp = (*head)->next;
@@ -26,14 +47,10 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	{
 		return (-1);
 	}
-	while (index && temp)
+	while (index)
 	{
 		index--;
 		temp = temp->next;
-	}
-	if (index)
-	{
-		return (-1);
 	}
 	del = temp->next;
 	if (del->prev != NULL)
