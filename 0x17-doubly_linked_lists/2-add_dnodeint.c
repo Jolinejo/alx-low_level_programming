@@ -2,7 +2,7 @@
 /**
  * add_dnodeint - Entry point
  * Description: print
- * @h: head
+ * @head: head
  * @n: number
  * Return: int
  */
