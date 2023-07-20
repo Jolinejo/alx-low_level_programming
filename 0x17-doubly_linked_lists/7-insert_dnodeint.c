@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * insert_nodeint_at_index- Entry point
+ * insert_dnodeint_at_index- Entry point
  * Description: to check if letter is uppercase
  * @n: n
  * @h: head
@@ -43,7 +43,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 	new->next = temp->next;
 	new->prev = temp;
-	temp->next->prev = new;
+	if (temp->next != NULL)
+		temp->next->prev = new;
 	temp->next = new;
 	new->n = n;
 	return (new);
