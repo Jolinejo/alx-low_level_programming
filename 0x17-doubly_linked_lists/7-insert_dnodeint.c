@@ -3,7 +3,7 @@
  * insert_nodeint_at_index- Entry point
  * Description: to check if letter is uppercase
  * @n: n
- * @head: head
+ * @h: head
  * @idx: index
  * Return: int
  */
@@ -16,16 +16,17 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (NULL);
 	if (idx == 0)
 	{
-		new->next = *head;
+		new->next = *h;
 		new->n = n;
 		new->prev = NULL;
-		(*head)->prev = new;
-		*head = new;
+		if (*h != NULL)
+			(*h)->prev = new;
+		*h = new;
 		return (new);
 	}
-	temp = *head;
+	temp = *h;
 	idx--;
-	if (*head == NULL)
+	if (*h == NULL)
 	{
 		free(new);
 		return (NULL);
