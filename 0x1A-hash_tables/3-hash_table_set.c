@@ -14,7 +14,10 @@ hash_node_t *add_node(hash_node_t **head, const char *value, const char *key)
 	if (new == NULL || head == NULL)
 		return (NULL);
 	new->key = strdup(key);
-	new->value = strdup(value);
+	if (value != NULL)
+		new->value = strdup(value);
+	else
+		new->value = NULL;
 	new->next = *head;
 	*head = new;
 	return (new);
