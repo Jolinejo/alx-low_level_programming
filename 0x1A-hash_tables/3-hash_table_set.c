@@ -11,6 +11,7 @@ hash_node_t *add_node(hash_node_t **head, const char *value, const char *key)
 {
 	hash_node_t *new = malloc(sizeof(hash_node_t));
 	hash_node_t *curr = *head;
+
 	if (new == NULL || head == NULL)
 		return (NULL);
 	if (*head != NULL)
@@ -22,7 +23,7 @@ hash_node_t *add_node(hash_node_t **head, const char *value, const char *key)
 				free(curr->value);
 				curr->value = strdup(value);
 				free(new);
-				return (curr);	
+				return (curr);
 			}
 			curr = curr->next;
 		}
