@@ -49,6 +49,8 @@ shash_node_t *in(shash_node_t **head, shash_node_t *new, shash_node_t **stail)
 		new->snext = *head;
 		if (*head != NULL)
 			(*head)->sprev = new;
+		else
+			*stail = new;
 		*head = new;
 		return (new);
 	}
