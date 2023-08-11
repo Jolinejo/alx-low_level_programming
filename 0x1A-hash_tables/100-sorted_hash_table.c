@@ -37,25 +37,25 @@ shash_table_t *shash_table_create(unsigned long int size)
  */
 shash_node_t *insert_node(shash_node_t **head, shash_node_t *new, shash_node_t **stail)
 {
-	shash_node_t *prev;
 	shash_node_t *curr = *head;
 
 	if (new == NULL)
 		return (NULL);
 	new->sprev = NULL;
 	new->snext = NULL;
-	if (*head == NULL || strcmp((*head)->key, new->key) > 1 )
+	if (*head == NULL || strcmp((*head)->key, new->key) > 0)
 	{
 		new->snext = *head;
+		if (*head != NULL)
+			(*head)->sprev = new;
 		*head = new;
 		return (new);
 	}
-	while (strcmp(curr->key, new->key) < 1 && curr->next != NULL)
+	while (strcmp(curr->key, new->key) < 0 && curr->snext != NULL)
 	{
-		prev = curr;
 		curr = curr->snext;
 	}
-	if (strcmp(curr->key, new->key) < 1)
+	if (strcmp(curr->key, new->key) < 0)
 	{
 		curr->snext = new;
 		new->sprev = curr;
@@ -63,11 +63,11 @@ shash_node_t *insert_node(shash_node_t **head, shash_node_t *new, shash_node_t *
 	}
 	else
 	{
-		new->snext = prev->snext;
-		if (prev->snext != NULL)
-			prev->snext->sprev = new;
-		prev->snext = new;
-		new->sprev = prev;
+		new->snext = curr;
+		new->sprev = curr->sprev;
+		if (new->sprev != NULL)
+			new->sprev->snext = new;
+		curr->sprev = new;
 	}
 	return (new);
 }
@@ -217,4 +217,50 @@ void shash_table_print_rev(const shash_table_t *ht)
 		node = node->sprev;
 	}
 	printf("}\n");
+}
+/**
+ * free_list- Entry point
+ * Description: frees list
+ * @head: head
+ * Return: nothing
+ */
+void free_list(shash_node_t *head)
+{
+	shash_node_t *temp1 = head;
+	shash_node_t *temp2;
+
+	if (head == NULL)
+		return;
+	while (temp1)
+	{
+		temp2 = temp1;
+		temp1 = temp1->next;
+		free(temp2->key);
+		free(temp2->value);
+		free(temp2);
+	}
+}
+/**
+ * hash_table_delete - Entry point
+ * Description: deletes table
+ * @ht: hash table
+ * Return: nothing
+ */
+void shash_table_delete(shash_table_t *ht)
+{
+	unsigned long int i;
+	shash_node_t *node;
+
+	if (ht == NULL)
+		return;
+	for (i = 0; i < ht->size; i++)
+	{
+		if (ht->array[i] != NULL)
+		{
+			node = ht->array[i];
+			free_list(node);
+		}
+	}
+	free(ht->array);
+	free(ht);
 }
