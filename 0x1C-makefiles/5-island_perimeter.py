@@ -4,7 +4,7 @@ per
 """
 
 
-def island_perimeter():
+def island_perimeter(grid):
     """calcs the per"""
     per = 0
     for i in range(len(grid)):
