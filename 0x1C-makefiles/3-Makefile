@@ -10,9 +10,9 @@ all: $(OBJ)
 %.o: %.c
 	$(CC) -c $< -o $@
 clean:
-	$(RM) -f $(NAME) *.swp *\~
+	$(RM) -f *~ $(NAME)
 oclean:
-	$(RM) -f *.o
+	$(RM) -f ${OBJ}
 fclean:
 	$(MAKE) clean
 	$(MAKE) oclean
