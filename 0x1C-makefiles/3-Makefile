@@ -13,9 +13,5 @@ clean:
 	$(RM) -f *~ $(NAME)
 oclean:
 	$(RM) -f ${OBJ}
-fclean:
-	$(MAKE) clean
-	$(MAKE) oclean
-re:
-	$(MAKE) oclean
-	$(MAKE) all
+fclean: clean oclean
+re: oclean all
