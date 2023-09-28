@@ -6,7 +6,7 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 AUX = m.h
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(AUX)
 
 clean:
 	 $(RM) *~ $(NAME)
@@ -14,4 +14,4 @@ oclean:
 	$(RM) ${OBJ}
 fclean: clean oclean
 re: oclean all
-.PHONY: all clean oclean fclean re $(NAME)
+.PHONY: all clean oclean fclean re
